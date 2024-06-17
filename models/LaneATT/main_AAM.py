@@ -49,7 +49,7 @@ class HAARepository:
         # 从haa_folder加载图片
         haa_images = []
         for file in os.listdir(self.haa_folder):
-            if file.endswith(".png"):  # 假设HAA图片是PNG格式
+            if file.endswith(".png"): 
                 img = Image.open(os.path.join(self.haa_folder, file))
                 haa_images.append(transforms.ToTensor()(img))
         return haa_images
@@ -69,7 +69,6 @@ def compute_attention_map(model, inputs):
 
 
 def apply_aam(images, attention_maps, haa_repository):
-    """使用注意力图对图像应用注意力区域混合（AAM）"""
     mixed_images = []
     for img, attn_map in zip(images, attention_maps):
         high_attention_area = haa_repository.sample()
@@ -90,8 +89,7 @@ def main():
     device = torch.device('cpu') if not torch.cuda.is_available() or args.cpu else torch.device('cuda')
     runner = Runner(cfg, exp, device, view=args.view, resume=args.resume, deterministic=args.deterministic)
 
-    # 加载高注意力区域（HAA）库
-    haa_repository = HAARepository('path_to_haa_images')
+    haa_repository = HAARepository('./data/haa_images/')
 
     if args.mode == 'train':
         try:

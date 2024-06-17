@@ -62,7 +62,7 @@ class HAARepository:
         # 从haa_folder加载图片
         haa_images = []
         for file in os.listdir(self.haa_folder):
-            if file.endswith(".png"):  # 假设HAA图片是PNG格式
+            if file.endswith(".png"): 
                 img = Image.open(os.path.join(self.haa_folder, file))
                 haa_images.append(transforms.ToTensor()(img))
         return haa_images
@@ -72,7 +72,6 @@ class HAARepository:
         return random.choice(self.haa_images)
 
 def apply_aam(images, attention_maps, haa_repository):
-    """使用注意力图对图像应用注意力区域混合（AAM）"""
     mixed_images = []
     for img, attn_map in zip(images, attention_maps):
         high_attention_area = haa_repository.sample()
@@ -171,8 +170,7 @@ if __name__ == "__main__":
     logger = get_logger(work_dir, cfg)
     cp_projects(args.auto_backup, work_dir)
 
-    # 初始化HAA库
-    haa_repository = HAARepository('path_to_haa_images')
+    haa_repository = HAARepository('./data/haa_images/')
 
     for epoch in range(resume_epoch, cfg.epoch):
         train(net, train_loader, loss_dict, optimizer, scheduler, logger, epoch, metric_dict, cfg.use_aux)
