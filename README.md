@@ -1,6 +1,6 @@
 ### README.md
 
-# CARLA Simulation Data Sampler
+# Anonymous Repo
 
 ## Overview
 
