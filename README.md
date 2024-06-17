@@ -1,5 +1,3 @@
-### README.md
-
 # Anonymous Repo
 
 ## Overview
