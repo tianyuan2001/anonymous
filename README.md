@@ -39,17 +39,18 @@ Includes scripts for implementing the Attention Area Mixing method, designed to 
 
 ## Usage
 
-
+**To sample data:**
 
 1. **Run CARLA Server:**
    Make sure the CARLA server is running before executing any scripts.
 
 2. **Generate Traffic:**
    To generate traffic in the simulator, run:
+   
    ```bash
    python generate_traffic.py
    ```
-
+   
 3. **Test the Setup:**
    To sample the data, run:
 
@@ -57,7 +58,7 @@ Includes scripts for implementing the Attention Area Mixing method, designed to 
    python test.py
    ```
 
-
+**To train model:**
 
 1. **Train LaneATT Model with AAM:**
    To train the LaneATT model with AAM, run:
