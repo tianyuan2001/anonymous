@@ -1,0 +1,44 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pyzw
+
+# Virtual Environment
+venv/
+env/
+*.env
+
+# IDE
+.vscode/
+.idea/
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+*.log
+logs/
+
+# Cache
+*.cache/
+.cache/
+
+# Build
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Miscellaneous
+*.bak
+*.swp
+*.tmp
+*.temp
+*.DS_Store
